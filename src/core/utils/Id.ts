@@ -1,0 +1,6 @@
+// biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
+export default class Id {
+	static get novo(): string {
+		return Math.random().toString(36).substring(2, 15);
+	}
+}
