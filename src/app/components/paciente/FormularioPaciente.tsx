@@ -1,6 +1,7 @@
 import type { Paciente } from '@/core/model/Paciente'
 import InputTexto from '../shared/InputTexto'
 import InputArea from '../shared/InputArea'
+import Prescricao from './Prescricao'
 
 export interface FormularioPacienteProps {
   paciente: Partial<Paciente>
