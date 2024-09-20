@@ -25,7 +25,7 @@ export default function FormularioPaciente(props: FormularioPacienteProps) {
       <InputArea
         label="Prescrição"
         className="bg-zinc-300 p-2 rounded-md outline-none"
-        value={props.paciente.prescricao}
+        value={props.paciente.prescricao || ''}
         onChange={e =>
           props.onChange?.({ ...props.paciente, prescricao: e.target.value })
         }

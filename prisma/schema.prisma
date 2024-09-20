@@ -13,5 +13,5 @@ datasource db {
 model Paciente {
   id  String @id @default (cuid())
   nome String  
-  prescricao String
+  prescricao String? @default("")
 }
