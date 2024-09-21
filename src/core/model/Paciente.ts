@@ -1,5 +1,11 @@
-export interface Paciente {
+export type Paciente = {
   id: string
   nome: string
   prescricao: string | null
 }
+
+// export type Paciente = {
+//   id: string
+//   nome: string
+//   prescricoes: Prescricao
+// }

@@ -13,5 +13,20 @@ datasource db {
 model Paciente {
   id  String @id @default (cuid())
   nome String  
-  prescricao String? @default("")
+  prescricao String?
 }
+
+// model Paciente {
+//   id  String @id @default (cuid())
+//   nome String  
+//   prescricoes Prescricao[]
+// }
+
+// model Prescricao {
+//   id          String @id @default (cuid())
+//   pacienteId  String
+//   createdAt    DateTime @default(now())
+//   updatedAt    DateTime @updatedAt
+//   prescricao  String?
+//   paciente     Paciente @relation(fields: [pacienteId], references: [id])
+// }
