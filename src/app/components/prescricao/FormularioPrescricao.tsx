@@ -7,7 +7,7 @@ export interface FormularioPrescricaoProps {
   onChange: (prescricao: Partial<Prescricao>) => void
   salvarPresc: () => void
   cancelarPresc: () => void
-  removerPresc: () => void
+  removerPacientePresc: () => void
 }
 
 export default function FormularioPrescricao(props: FormularioPrescricaoProps) {
@@ -47,7 +47,7 @@ export default function FormularioPrescricao(props: FormularioPrescricaoProps) {
         <button
           type="button"
           className="bg-red-500 text-zinc-50 px-4 py-2 rounded-md"
-          onClick={props.removerPresc}
+          onClick={props.removerPacientePresc}
         >
           Remover
         </button>

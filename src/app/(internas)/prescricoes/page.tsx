@@ -10,8 +10,8 @@ export default function Page() {
   const {
     pacientes,
     paciente,
-    onSave,
-    remover,
+    salvarPaciente,
+    removerPaciente,
     onCancel,
     alterar,
     gerarPrescricao,
@@ -24,9 +24,9 @@ export default function Page() {
         <Prescricao
           paciente={paciente}
           onChange={alterar}
-          onSave={onSave}
+          salvarPaciente={salvarPaciente}
           onCancel={onCancel}
-          remover={remover}
+          removerPaciente={removerPaciente}
           gerarPrescricao={gerarPrescricao}
         />
       ) : (

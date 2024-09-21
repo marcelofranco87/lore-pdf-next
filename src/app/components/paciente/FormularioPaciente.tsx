@@ -6,9 +6,9 @@ import Prescricao from './Prescricao'
 export interface FormularioPacienteProps {
   paciente: Partial<Paciente>
   onChange: (paciente: Partial<Paciente>) => void
-  onSave: () => void
+  salvarPaciente: () => void
   onCancel: () => void
-  remover: () => void
+  removerPaciente: () => void
 }
 
 export default function FormularioPaciente(props: FormularioPacienteProps) {
@@ -36,7 +36,7 @@ export default function FormularioPaciente(props: FormularioPacienteProps) {
           <button
             type="button"
             className="bg-purple-800 text-zinc-50 px-4 py-2 rounded-md"
-            onClick={props.onSave}
+            onClick={props.salvarPaciente}
           >
             Salvar
           </button>
@@ -51,7 +51,7 @@ export default function FormularioPaciente(props: FormularioPacienteProps) {
         <button
           type="button"
           className="bg-red-500 text-zinc-50 px-4 py-2 rounded-md"
-          onClick={props.remover}
+          onClick={props.removerPaciente}
         >
           Remover
         </button>

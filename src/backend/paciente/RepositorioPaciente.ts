@@ -28,7 +28,7 @@ export default class RepositorioPaciente {
     return paciente as Paciente
   }
 
-  static async remover(id: string): Promise<void> {
+  static async removerPaciente(id: string): Promise<void> {
     // biome-ignore lint/complexity/noThisInStatic: <explanation>
     await this.db.paciente.delete({
       where: { id },

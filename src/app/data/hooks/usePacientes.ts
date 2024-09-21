@@ -7,29 +7,29 @@ export default function usePacientes() {
   const [paciente, setPaciente] = useState<Partial<Paciente> | null>(null)
 
   useEffect(() => {
-    Backend.pacientes.showAll().then(setPacientes)
+    Backend.pacientes.obterTodos().then(setPacientes)
   }, [])
 
-  async function onSave() {
+  async function salvarPaciente() {
     if (!paciente) return
-    await Backend.pacientes.onSave(paciente)
-    const pacientes = await Backend.pacientes.showAll()
+    await Backend.pacientes.salvarPaciente(paciente)
+    const pacientes = await Backend.pacientes.obterTodos()
     setPacientes(pacientes)
     setPaciente(null)
   }
 
-  async function remover() {
+  async function removerPaciente() {
     if (!paciente || !paciente.id) return
-    await Backend.pacientes.remover(paciente.id)
-    const pacientes = await Backend.pacientes.showAll()
+    await Backend.pacientes.removerPaciente(paciente.id)
+    const pacientes = await Backend.pacientes.obterTodos()
     setPacientes(pacientes)
     setPaciente(null)
   }
 
   async function gerarPrescricao() {
     if (!paciente) return
-    await Backend.pacientes.onSave(paciente)
-    const pacientes = await Backend.pacientes.showAll()
+    await Backend.pacientes.salvarPaciente(paciente)
+    const pacientes = await Backend.pacientes.obterTodos()
     setPacientes(pacientes)
     setPaciente(null)
   }
@@ -37,8 +37,8 @@ export default function usePacientes() {
   return {
     pacientes,
     paciente,
-    onSave,
-    remover,
+    salvarPaciente,
+    removerPaciente,
     gerarPrescricao,
     onCancel: () => setPaciente(null),
     alterar: (paciente: Partial<Paciente> | null) => setPaciente(paciente),

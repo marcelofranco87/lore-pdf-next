@@ -7,8 +7,14 @@ import usePacientes from '@/app/data/hooks/usePacientes'
 import { IconPlus, IconUser } from '@tabler/icons-react'
 
 export default function Page() {
-  const { pacientes, paciente, onSave, remover, onCancel, alterar } =
-    usePacientes()
+  const {
+    pacientes,
+    paciente,
+    salvarPaciente,
+    removerPaciente,
+    onCancel,
+    alterar,
+  } = usePacientes()
 
   return (
     <Pagina className="flex flex-col gap-10">
@@ -17,9 +23,9 @@ export default function Page() {
         <FormularioPaciente
           paciente={paciente}
           onChange={alterar}
-          onSave={onSave}
+          salvarPaciente={salvarPaciente}
           onCancel={onCancel}
-          remover={remover}
+          removerPaciente={removerPaciente}
         />
       ) : (
         <>

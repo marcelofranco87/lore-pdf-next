@@ -8,10 +8,10 @@ import CampoPresc from '../shared/CampoPresc'
 export interface PrescricaoProps {
   paciente: Partial<Paciente>
   onChange: (paciente: Partial<Paciente>) => void
-  onSave: () => void
+  salvarPaciente: () => void
   onCancel: () => void
   gerarPrescricao: () => void
-  remover: () => void
+  removerPaciente: () => void
 }
 
 export default function Prescricao(props: PrescricaoProps) {
