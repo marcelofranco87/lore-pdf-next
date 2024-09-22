@@ -1,7 +1,7 @@
-export type Prescricao = {
+export type Receita = {
   id: string
   pacienteId: string
   createdAt: Date
   updatedAt: Date
-  prescricao: string | null
+  receita: string | null
 }

@@ -1,4 +1,4 @@
-import type { Prescricao } from '@/core/model/Prescricao'
+import type { Prescricao } from '@/core/model/Receita'
 
 export interface LinhaPrescricaoProps {
   prescricao: Prescricao

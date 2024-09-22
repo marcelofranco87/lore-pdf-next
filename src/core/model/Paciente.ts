@@ -1,3 +1,5 @@
+// import type { Receita } from "./Receita"
+
 export type Paciente = {
   id: string
   nome: string
@@ -7,5 +9,6 @@ export type Paciente = {
 // export type Paciente = {
 //   id: string
 //   nome: string
-//   prescricoes: Prescricao
+//   prescricao: string | null
+//   receitas: Receita
 // }

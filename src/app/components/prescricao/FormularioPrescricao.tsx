@@ -1,4 +1,4 @@
-import type { Prescricao } from '@/core/model/Prescricao'
+import type { Prescricao } from '@/core/model/Receita'
 import InputTexto from '../shared/InputTexto'
 import InputArea from '../shared/InputArea'
 
