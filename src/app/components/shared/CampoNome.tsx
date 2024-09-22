@@ -10,7 +10,7 @@ export default function CampoNome(props: CampoNomeProps) {
   return (
     <div className="flex flex-col gap-2">
       <label>{props.label}</label>
-      <input {...props} className={props.className} />
+      <input {...props} readOnly className={props.className} />
     </div>
   )
 }

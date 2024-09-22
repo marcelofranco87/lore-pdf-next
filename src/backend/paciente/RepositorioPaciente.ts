@@ -5,7 +5,7 @@ import { PrismaClient } from '@prisma/client'
 export default class RepositorioPaciente {
   private static db: PrismaClient = new PrismaClient()
 
-  static async salvar(paciente: Paciente): Promise<Paciente> {
+  static async salvarPaciente(paciente: Paciente): Promise<Paciente> {
     // biome-ignore lint/complexity/noThisInStatic: <explanation>
     return await this.db.paciente.upsert({
       where: { id: paciente.id },

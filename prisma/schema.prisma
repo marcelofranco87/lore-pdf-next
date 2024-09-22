@@ -19,14 +19,15 @@ model Paciente {
 // model Paciente {
 //   id  String @id @default (cuid())
 //   nome String  
-//   prescricoes Prescricao[]
+//   prescricao String?
+//   receitas Receita[]
 // }
 
-// model Prescricao {
+// model Receita {
 //   id          String @id @default (cuid())
 //   pacienteId  String
 //   createdAt    DateTime @default(now())
 //   updatedAt    DateTime @updatedAt
-//   prescricao  String?
+//   receita  String?
 //   paciente     Paciente @relation(fields: [pacienteId], references: [id])
 // }
