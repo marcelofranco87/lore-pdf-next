@@ -28,6 +28,9 @@ export default class RepositorioReceita {
     // biome-ignore lint/complexity/noThisInStatic: <explanation>
     const receitas = await this.db.receita.findMany({
       where: { pacienteId },
+      orderBy: {
+        updatedAt: 'desc',
+      },
     })
 
     return receitas

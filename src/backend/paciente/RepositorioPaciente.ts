@@ -16,7 +16,11 @@ export default class RepositorioPaciente {
 
   static async obterTodos(): Promise<Paciente[]> {
     // biome-ignore lint/complexity/noThisInStatic: <explanation>
-    return await this.db.paciente.findMany()
+    return await this.db.paciente.findMany({
+      orderBy: {
+        nome: 'asc',
+      },
+    })
   }
 
   static async obterPorId(id: string): Promise<Paciente> {

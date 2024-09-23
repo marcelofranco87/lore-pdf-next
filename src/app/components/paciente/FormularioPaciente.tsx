@@ -22,14 +22,6 @@ export default function FormularioPaciente(props: FormularioPacienteProps) {
           props.onChange?.({ ...props.paciente, nome: e.target.value })
         }
       />
-      <InputArea
-        label="Prescrição"
-        className="bg-zinc-300 p-2 rounded-md outline-none"
-        value={props.paciente.prescricao || ''}
-        onChange={e =>
-          props.onChange?.({ ...props.paciente, prescricao: e.target.value })
-        }
-      />
       <div className="flex justify-between">
         <div className="flex gap-5">
           <button

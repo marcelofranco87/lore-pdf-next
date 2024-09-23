@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
 import { useReactToPrint } from 'react-to-print'
-import type { Paciente } from '@prisma/client'
+import type { Paciente, Receita } from '@prisma/client'
 import CampoNome from '../shared/CampoNome'
-import CampoPresc from '../shared/CampoPresc'
 
 export interface GerarPrescricaoProps {
   paciente: Partial<Paciente>
+  receita: Partial<Receita>
   onChange: (paciente: Partial<Paciente>) => void
   salvarPaciente: () => void
   onCancel: () => void
@@ -37,7 +37,7 @@ export default function GerarPrescricao(props: GerarPrescricaoProps) {
           value={props.paciente.nome}
         />
         <div className="whitespace-break-spaces p-2 outline-none">
-          {props.paciente.prescricao || ''}
+          {props.receita.receita || ''}
         </div>
       </div>
     </div>
