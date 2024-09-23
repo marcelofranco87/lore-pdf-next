@@ -1,6 +1,5 @@
 import type { Paciente } from '@prisma/client'
 import InputTexto from '../shared/InputTexto'
-import InputArea from '../shared/InputArea'
 
 export interface FormularioPacienteProps {
   paciente: Partial<Paciente>
