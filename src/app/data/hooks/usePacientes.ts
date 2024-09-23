@@ -1,5 +1,5 @@
 import Backend from '@/backend'
-import type { Paciente } from '@/core/model/Paciente'
+import type { Paciente } from '@prisma/client'
 import { useEffect, useState } from 'react'
 
 export default function usePacientes() {

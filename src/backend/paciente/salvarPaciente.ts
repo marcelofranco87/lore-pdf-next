@@ -1,6 +1,6 @@
 'use server'
 
-import type { Paciente } from '@/core/model/Paciente'
+import type { Paciente } from '@prisma/client'
 import Id from '@/core/utils/Id'
 import RepositorioPaciente from './RepositorioPaciente'
 

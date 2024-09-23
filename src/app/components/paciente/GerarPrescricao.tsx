@@ -1,20 +1,18 @@
 import React, { useRef } from 'react'
 import { useReactToPrint } from 'react-to-print'
-
-import type { Paciente } from '@/core/model/Paciente'
+import type { Paciente } from '@prisma/client'
 import CampoNome from '../shared/CampoNome'
 import CampoPresc from '../shared/CampoPresc'
 
-export interface PrescricaoProps {
+export interface GerarPrescricaoProps {
   paciente: Partial<Paciente>
   onChange: (paciente: Partial<Paciente>) => void
   salvarPaciente: () => void
   onCancel: () => void
-  gerarPrescricao: () => void
   removerPaciente: () => void
 }
 
-export default function Prescricao(props: PrescricaoProps) {
+export default function GerarPrescricao(props: GerarPrescricaoProps) {
   const componentRef = useRef(null)
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,

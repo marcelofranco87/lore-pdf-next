@@ -1,5 +1,5 @@
 'use client'
-import Prescricao from '@/app/components/paciente/Prescricao'
+import GerarPrescricao from '@/app/components/paciente/GerarPrescricao'
 import ListaPacientes from '@/app/components/paciente/ListaPacientes'
 import Pagina from '@/app/components/template/Pagina'
 import Titulo from '@/app/components/template/Titulo'
@@ -14,20 +14,18 @@ export default function Page() {
     removerPaciente,
     onCancel,
     alterar,
-    gerarPrescricao,
   } = usePacientes()
 
   return (
     <Pagina className="flex flex-col gap-10">
       <Titulo icone={IconUser} texto="Gerar Prescrição" />
       {paciente ? (
-        <Prescricao
+        <GerarPrescricao
           paciente={paciente}
           onChange={alterar}
           salvarPaciente={salvarPaciente}
           onCancel={onCancel}
           removerPaciente={removerPaciente}
-          gerarPrescricao={gerarPrescricao}
         />
       ) : (
         <>

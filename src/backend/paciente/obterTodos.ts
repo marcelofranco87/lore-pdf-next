@@ -1,7 +1,7 @@
-"use server";
+'use server'
 
-import RepositorioPaciente from "./RepositorioPaciente";
+import RepositorioPaciente from './RepositorioPaciente'
 
 export default async function obterTodos() {
-	return RepositorioPaciente.obterTodos();
+  return RepositorioPaciente.obterTodos()
 }

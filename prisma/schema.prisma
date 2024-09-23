@@ -14,14 +14,14 @@ model Paciente {
   id  String @id @default (cuid())
   nome String  
   prescricao String?
-  // receitas Receita[]
+  receitas Receita[]
 }
 
-// model Receita {
-//   id          String @id @default (cuid())
-//   pacienteId  String
-//   createdAt    DateTime @default(now())
-//   updatedAt    DateTime @updatedAt
-//   receita  String?
-//   paciente     Paciente @relation(fields: [pacienteId], references: [id])
-// }
+model Receita {
+  id          String @id @default (cuid())
+  pacienteId  String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  receita  String?
+  paciente     Paciente @relation(fields: [pacienteId], references: [id])
+}

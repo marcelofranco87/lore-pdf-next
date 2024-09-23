@@ -1,33 +1,42 @@
-import type { Paciente } from '@prisma/client'
+import type { Paciente, Receita } from '@prisma/client'
 import InputTexto from '../shared/InputTexto'
 import InputArea from '../shared/InputArea'
 
-export interface FormularioPacienteProps {
+export interface FormularioReceitaProps {
   paciente: Partial<Paciente>
-  onChange: (paciente: Partial<Paciente>) => void
-  salvarPaciente: () => void
+  receita: Partial<Receita>
+  onChange: (receita: Partial<Receita>) => void
+  salvarReceita: (
+    receita: Partial<Receita>,
+    paciente: Partial<Paciente>
+  ) => void
   onCancel: () => void
-  removerPaciente: () => void
+  removerReceita: () => void
 }
 
-export default function FormularioPaciente(props: FormularioPacienteProps) {
+export default function FormularioReceita(props: FormularioReceitaProps) {
   return (
     <div className="flex flex-col gap-5 text-zinc-900">
       <InputTexto
         label="Nome do paciente"
         type="text"
+        readOnly
         className="bg-zinc-300 p-2 rounded-md outline-none"
         value={props.paciente.nome}
-        onChange={e =>
-          props.onChange?.({ ...props.paciente, nome: e.target.value })
-        }
+      />
+      <InputTexto
+        label="Id do paciente"
+        type="text"
+        readOnly
+        className="bg-zinc-300 p-2 rounded-md outline-none"
+        value={props.receita.pacienteId}
       />
       <InputArea
         label="Prescrição"
         className="bg-zinc-300 p-2 rounded-md outline-none"
-        value={props.paciente.prescricao || ''}
+        value={props.receita.receita || ''}
         onChange={e =>
-          props.onChange?.({ ...props.paciente, prescricao: e.target.value })
+          props.onChange?.({ ...props.receita, receita: e.target.value })
         }
       />
       <div className="flex justify-between">
@@ -35,7 +44,7 @@ export default function FormularioPaciente(props: FormularioPacienteProps) {
           <button
             type="button"
             className="bg-purple-800 text-zinc-50 px-4 py-2 rounded-md"
-            onClick={props.salvarPaciente}
+            onClick={() => props.salvarReceita(props.receita, props.paciente)}
           >
             Salvar
           </button>
@@ -50,7 +59,7 @@ export default function FormularioPaciente(props: FormularioPacienteProps) {
         <button
           type="button"
           className="bg-red-500 text-zinc-50 px-4 py-2 rounded-md"
-          onClick={props.removerPaciente}
+          onClick={props.removerReceita}
         >
           Remover
         </button>

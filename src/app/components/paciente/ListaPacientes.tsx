@@ -1,5 +1,5 @@
 import LinhaPaciente from './LinhaPaciente'
-import type { Paciente } from '@/core/model/Paciente'
+import type { Paciente } from '@prisma/client'
 
 export interface ListaPacientesProps {
   pacientes: Paciente[]
