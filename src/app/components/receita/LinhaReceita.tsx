@@ -15,7 +15,7 @@ export default function LinhaReceita(props: LinhaReceitaProps) {
     >
       <div className="flex flex-col">
         <span className="text-xl font-black">
-          {`${props.receita.updatedAt.toLocaleDateString()} - ${props.receita.updatedAt.toLocaleTimeString()}`}
+          {`${props.receita.updatedAt.toLocaleDateString()}`}
         </span>
       </div>
     </div>

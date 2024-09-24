@@ -15,7 +15,7 @@ export default function Page() {
     paciente,
     salvarPaciente,
     removerPaciente,
-    onCancel,
+    retornar,
     alterar,
   } = usePacientes()
 
@@ -32,7 +32,7 @@ export default function Page() {
               receita={receita}
               onChange={alterar}
               salvarPaciente={salvarPaciente}
-              onCancel={onCancel}
+              retornar={retornar}
               removerPaciente={removerPaciente}
             />
           ) : (

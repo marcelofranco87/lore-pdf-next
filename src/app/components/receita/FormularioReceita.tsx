@@ -10,7 +10,7 @@ export interface FormularioReceitaProps {
     receita: Partial<Receita>,
     paciente: Partial<Paciente>
   ) => void
-  onCancel: () => void
+  retornar: () => void
   removerReceita: () => void
 }
 
@@ -23,13 +23,6 @@ export default function FormularioReceita(props: FormularioReceitaProps) {
         readOnly
         className="bg-zinc-300 p-2 rounded-md outline-none"
         value={props.paciente.nome}
-      />
-      <InputTexto
-        label="Id do paciente"
-        type="text"
-        readOnly
-        className="bg-zinc-300 p-2 rounded-md outline-none"
-        value={props.receita.pacienteId}
       />
       <InputArea
         label="Prescrição"
@@ -51,7 +44,7 @@ export default function FormularioReceita(props: FormularioReceitaProps) {
           <button
             type="button"
             className="bg-zinc-300 text-zinc-900 px-4 py-2 rounded-md"
-            onClick={props.onCancel}
+            onClick={props.retornar}
           >
             Cancelar
           </button>

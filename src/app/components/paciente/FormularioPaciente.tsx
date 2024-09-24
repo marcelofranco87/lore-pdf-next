@@ -5,7 +5,7 @@ export interface FormularioPacienteProps {
   paciente: Partial<Paciente>
   onChange: (paciente: Partial<Paciente>) => void
   salvarPaciente: () => void
-  onCancel: () => void
+  retornar: () => void
   removerPaciente: () => void
 }
 
@@ -33,7 +33,7 @@ export default function FormularioPaciente(props: FormularioPacienteProps) {
           <button
             type="button"
             className="bg-zinc-300 text-zinc-900 px-4 py-2 rounded-md"
-            onClick={props.onCancel}
+            onClick={props.retornar}
           >
             Cancelar
           </button>

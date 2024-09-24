@@ -6,8 +6,9 @@ import Pagina from '@/app/components/template/Pagina'
 import Titulo from '@/app/components/template/Titulo'
 import usePacientes from '@/app/data/hooks/usePacientes'
 import useReceitas from '@/app/data/hooks/useReceitas'
-import { IconPlus, IconUser } from '@tabler/icons-react'
+import { IconArrowLeft, IconPlus, IconUser } from '@tabler/icons-react'
 import CampoNome from '@/app/components/shared/CampoNome'
+import MenuItem from '@/app/components/template/MenuItem'
 
 export default function Page() {
   const {
@@ -15,7 +16,7 @@ export default function Page() {
     receita,
     salvarReceita,
     removerReceita,
-    onCancel,
+    retornar,
     verReceitas,
   } = useReceitas()
 
@@ -32,8 +33,8 @@ export default function Page() {
               paciente={paciente}
               receita={receita}
               onChange={verReceitas}
+              retornar={retornar}
               salvarReceita={salvarReceita}
-              onCancel={onCancel}
               removerReceita={removerReceita}
             />
           ) : (

@@ -40,7 +40,7 @@ export default function usePacientes() {
     salvarPaciente,
     removerPaciente,
     gerarPrescricao,
-    onCancel: () => setPaciente(null),
+    retornar: () => setPaciente(null),
     alterar: (paciente: Partial<Paciente> | null) => setPaciente(paciente),
   }
 }

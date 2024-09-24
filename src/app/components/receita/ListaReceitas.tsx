@@ -1,5 +1,4 @@
-import type { Receita } from '@prisma/client'
-
+import type { Paciente, Receita } from '@prisma/client'
 import LinhaReceita from './LinhaReceita'
 
 export interface ListaReceitasProps {

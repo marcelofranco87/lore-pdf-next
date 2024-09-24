@@ -14,6 +14,16 @@
   }
 }
 
+.header, .footer {
+  display: none;
+}
+
+@media print {
+  .header, .footer {
+    display: block;
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

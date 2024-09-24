@@ -36,7 +36,7 @@ export default function useReceitas() {
     receita,
     salvarReceita,
     removerReceita,
-    onCancel: () => setReceita(null),
+    retornar: () => setReceita(null),
     alterar: (receita: Partial<Receita> | null) => setReceita(receita),
     verReceitas: (receita: Partial<Receita> | null) => setReceita(receita),
   }
