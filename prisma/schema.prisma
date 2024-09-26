@@ -21,6 +21,7 @@ model Receita {
   pacienteId  String
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-  receita  String?
+  palavrasChave String?
+  receita  String?  
   paciente     Paciente @relation(fields: [pacienteId], references: [id])
 }

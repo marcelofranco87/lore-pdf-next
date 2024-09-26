@@ -3,6 +3,7 @@ import InputTexto from '../shared/InputTexto'
 
 export interface FormularioPacienteProps {
   paciente: Partial<Paciente>
+
   onChange: (paciente: Partial<Paciente>) => void
   salvarPaciente: () => void
   retornar: () => void
@@ -10,6 +11,22 @@ export interface FormularioPacienteProps {
 }
 
 export default function FormularioPaciente(props: FormularioPacienteProps) {
+  const handleRemove = async () => {
+    const confirmaRemover = confirm(
+      'Tem certeza que deseja remover o paciente?\nEsta ação não pode ser desfeita.'
+    )
+
+    if (!confirmaRemover) return
+
+    try {
+      await props.removerPaciente()
+      alert('Paciente removido.')
+    } catch (error) {
+      console.error('Erro ao remover o paciente:', error)
+      alert('Este paciente tem receitas em seu nome e não pode ser removido.')
+    }
+  }
+
   return (
     <div className="flex flex-col gap-5 text-zinc-900">
       <InputTexto
@@ -41,7 +58,7 @@ export default function FormularioPaciente(props: FormularioPacienteProps) {
         <button
           type="button"
           className="bg-red-500 text-zinc-50 px-4 py-2 rounded-md"
-          onClick={props.removerPaciente}
+          onClick={handleRemove}
         >
           Remover
         </button>

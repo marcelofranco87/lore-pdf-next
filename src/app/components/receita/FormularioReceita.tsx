@@ -24,6 +24,15 @@ export default function FormularioReceita(props: FormularioReceitaProps) {
         className="bg-zinc-300 p-2 rounded-md outline-none"
         value={props.paciente.nome}
       />
+      <InputTexto
+        label="Palavras-chave (opcional)"
+        type="text"
+        className="bg-zinc-300 p-2 rounded-md outline-none"
+        value={props.receita.palavrasChave || ''}
+        onChange={e =>
+          props.onChange?.({ ...props.receita, palavrasChave: e.target.value })
+        }
+      />
       <InputArea
         label="Prescrição"
         className="bg-zinc-300 p-2 rounded-md outline-none"

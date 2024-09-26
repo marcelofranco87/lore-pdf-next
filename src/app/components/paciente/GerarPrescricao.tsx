@@ -15,7 +15,7 @@ export interface GerarPrescricaoProps {
   receita: Partial<Receita>
   onChange: (paciente: Partial<Paciente>) => void
   salvarPaciente: () => void
-  onCancel: () => void
+  retornar: () => void
   removerPaciente: () => void
 }
 
