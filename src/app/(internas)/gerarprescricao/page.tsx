@@ -5,15 +5,20 @@ import ListaReceitas from '@/app/components/receita/ListaReceitas'
 import CampoNome from '@/app/components/shared/CampoNome'
 import Pagina from '@/app/components/template/Pagina'
 import Titulo from '@/app/components/template/Titulo'
-import usePacientes from '@/app/data/hooks/usePacientes'
-import useReceitas from '@/app/data/hooks/useReceitas'
+import useFuncoes from '@/app/data/hooks/useFuncoes'
 import { IconPrinter } from '@tabler/icons-react'
 
 export default function Page() {
-  const { pacientes, paciente, salvarPaciente, removerPaciente, verPaciente } =
-    usePacientes()
-
-  const { receitas, receita, verReceita } = useReceitas()
+  const {
+    pacientes,
+    paciente,
+    salvarPaciente,
+    removerPaciente,
+    verPaciente,
+    receitas,
+    receita,
+    verReceita,
+  } = useFuncoes()
 
   return (
     <Pagina className="flex flex-col gap-10">

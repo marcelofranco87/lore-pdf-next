@@ -3,7 +3,7 @@ import FormularioPaciente from '@/app/components/paciente/FormularioPaciente'
 import ListaPacientes from '@/app/components/paciente/ListaPacientes'
 import Pagina from '@/app/components/template/Pagina'
 import Titulo from '@/app/components/template/Titulo'
-import usePacientes from '@/app/data/hooks/usePacientes'
+import useFuncoes from '@/app/data/hooks/useFuncoes'
 import { IconPlus, IconUser } from '@tabler/icons-react'
 
 export default function Page() {
@@ -14,7 +14,7 @@ export default function Page() {
     removerPaciente,
     retornarPac,
     verPaciente,
-  } = usePacientes()
+  } = useFuncoes()
 
   return (
     <Pagina className="flex flex-col gap-10">
