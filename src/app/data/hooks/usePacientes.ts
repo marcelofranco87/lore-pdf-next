@@ -26,21 +26,12 @@ export default function usePacientes() {
     setPaciente(null)
   }
 
-  async function gerarPrescricao() {
-    if (!paciente) return
-    await Backend.pacientes.salvarPaciente(paciente)
-    const pacientes = await Backend.pacientes.obterTodos()
-    setPacientes(pacientes)
-    setPaciente(null)
-  }
-
   return {
     pacientes,
     paciente,
     salvarPaciente,
     removerPaciente,
-    gerarPrescricao,
-    retornar: () => setPaciente(null),
-    alterar: (paciente: Partial<Paciente> | null) => setPaciente(paciente),
+    retornarPac: () => setPaciente(null),
+    verPaciente: (paciente: Partial<Paciente> | null) => setPaciente(paciente),
   }
 }

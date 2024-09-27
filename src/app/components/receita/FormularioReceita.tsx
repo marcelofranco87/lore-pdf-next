@@ -10,7 +10,7 @@ export interface FormularioReceitaProps {
     receita: Partial<Receita>,
     paciente: Partial<Paciente>
   ) => void
-  retornar: () => void
+  retornarRec: () => void
   removerReceita: () => void
 }
 
@@ -53,7 +53,7 @@ export default function FormularioReceita(props: FormularioReceitaProps) {
           <button
             type="button"
             className="bg-zinc-300 text-zinc-900 px-4 py-2 rounded-md"
-            onClick={props.retornar}
+            onClick={props.retornarRec}
           >
             Cancelar
           </button>

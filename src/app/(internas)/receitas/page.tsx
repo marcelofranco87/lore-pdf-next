@@ -6,9 +6,8 @@ import Pagina from '@/app/components/template/Pagina'
 import Titulo from '@/app/components/template/Titulo'
 import usePacientes from '@/app/data/hooks/usePacientes'
 import useReceitas from '@/app/data/hooks/useReceitas'
-import { IconArrowLeft, IconPlus, IconUser } from '@tabler/icons-react'
+import { IconPlus, IconUser } from '@tabler/icons-react'
 import CampoNome from '@/app/components/shared/CampoNome'
-import MenuItem from '@/app/components/template/MenuItem'
 
 export default function Page() {
   const {
@@ -16,11 +15,11 @@ export default function Page() {
     receita,
     salvarReceita,
     removerReceita,
-    retornar,
-    verReceitas,
+    retornarRec,
+    verReceita,
   } = useReceitas()
 
-  const { pacientes, paciente, alterar } = usePacientes()
+  const { pacientes, paciente, verPaciente } = usePacientes()
 
   return (
     <Pagina className="flex flex-col gap-10">
@@ -32,8 +31,8 @@ export default function Page() {
             <FormularioReceita
               paciente={paciente}
               receita={receita}
-              onChange={verReceitas}
-              retornar={retornar}
+              onChange={verReceita}
+              retornarRec={retornarRec}
               salvarReceita={salvarReceita}
               removerReceita={removerReceita}
             />
@@ -43,7 +42,7 @@ export default function Page() {
                 <button
                   type="button"
                   className="flex items-center gap-2 bg-purple-800 text-zinc-50 px-4 py-2 rounded-md"
-                  onClick={() => verReceitas({})}
+                  onClick={() => verReceita({})}
                 >
                   <IconPlus />
                   <span>Nova Receita</span>
@@ -57,7 +56,7 @@ export default function Page() {
               />
               <ListaReceitas
                 receitas={receitas}
-                onClick={verReceitas}
+                onClick={verReceita}
                 pacienteId={paciente.id || ''}
               />
             </>
@@ -65,7 +64,7 @@ export default function Page() {
         </>
       ) : (
         <>
-          <ListaPacientes pacientes={pacientes} onClick={alterar} />
+          <ListaPacientes pacientes={pacientes} onClick={verPaciente} />
         </>
       )}
     </Pagina>

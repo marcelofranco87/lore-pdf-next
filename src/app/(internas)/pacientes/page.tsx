@@ -12,8 +12,8 @@ export default function Page() {
     paciente,
     salvarPaciente,
     removerPaciente,
-    retornar,
-    alterar,
+    retornarPac,
+    verPaciente,
   } = usePacientes()
 
   return (
@@ -22,9 +22,9 @@ export default function Page() {
       {paciente ? (
         <FormularioPaciente
           paciente={paciente}
-          onChange={alterar}
+          onChange={verPaciente}
           salvarPaciente={salvarPaciente}
-          retornar={retornar}
+          retornarPac={retornarPac}
           removerPaciente={removerPaciente}
         />
       ) : (
@@ -33,13 +33,13 @@ export default function Page() {
             <button
               type="button"
               className="flex items-center gap-2 bg-purple-800 text-zinc-50 px-4 py-2 rounded-md"
-              onClick={() => alterar({})}
+              onClick={() => verPaciente({})}
             >
               <IconPlus />
               <span>Novo Paciente</span>
             </button>
           </div>
-          <ListaPacientes pacientes={pacientes} onClick={alterar} />
+          <ListaPacientes pacientes={pacientes} onClick={verPaciente} />
         </>
       )}
     </Pagina>

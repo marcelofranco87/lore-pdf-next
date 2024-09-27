@@ -10,16 +10,10 @@ import useReceitas from '@/app/data/hooks/useReceitas'
 import { IconPrinter } from '@tabler/icons-react'
 
 export default function Page() {
-  const {
-    pacientes,
-    paciente,
-    salvarPaciente,
-    removerPaciente,
-    retornar,
-    alterar,
-  } = usePacientes()
+  const { pacientes, paciente, salvarPaciente, removerPaciente, verPaciente } =
+    usePacientes()
 
-  const { receitas, receita, verReceitas } = useReceitas()
+  const { receitas, receita, verReceita } = useReceitas()
 
   return (
     <Pagina className="flex flex-col gap-10">
@@ -30,9 +24,8 @@ export default function Page() {
             <GerarPrescricao
               paciente={paciente}
               receita={receita}
-              onChange={alterar}
+              onChange={verPaciente}
               salvarPaciente={salvarPaciente}
-              retornar={retornar}
               removerPaciente={removerPaciente}
             />
           ) : (
@@ -45,7 +38,7 @@ export default function Page() {
               />
               <ListaReceitas
                 receitas={receitas}
-                onClick={verReceitas}
+                onClick={verReceita}
                 pacienteId={paciente.id || ''}
               />
             </>
@@ -53,7 +46,7 @@ export default function Page() {
         </>
       ) : (
         <>
-          <ListaPacientes pacientes={pacientes} onClick={alterar} />
+          <ListaPacientes pacientes={pacientes} onClick={verPaciente} />
         </>
       )}
     </Pagina>
