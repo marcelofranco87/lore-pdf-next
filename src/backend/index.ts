@@ -2,10 +2,10 @@ import obterTodos from './paciente/obterTodos'
 import obterPorId from './paciente/obterPorId'
 import removerPaciente from './paciente/removerPaciente'
 import salvarPaciente from './paciente/salvarPaciente'
-import obterTodas from './receita/obterTodas'
-import obterPorPaciente from './receita/obterPorPaciente'
-import removerReceita from './receita/removerReceita'
-import salvarReceita from './receita/salvarReceita'
+import obterTodas from './prescricao/obterTodas'
+import obterPorPaciente from './prescricao/obterPorPaciente'
+import removerPrescricao from './prescricao/removerPrescricao'
+import salvarPrescricao from './prescricao/salvarPrescricao'
 
 // biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
 export default class Backend {
@@ -16,10 +16,10 @@ export default class Backend {
     removerPaciente: removerPaciente,
   }
 
-  static readonly receitas = {
-    salvarReceita: salvarReceita,
+  static readonly prescricoes = {
+    salvarPrescricao: salvarPrescricao,
     obterTodas: obterTodas,
     obterPorPaciente: obterPorPaciente,
-    removerReceita: removerReceita,
+    removerPrescricao: removerPrescricao,
   }
 }

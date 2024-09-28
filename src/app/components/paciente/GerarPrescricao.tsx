@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useReactToPrint } from 'react-to-print'
-import type { Paciente, Receita } from '@prisma/client'
+import type { Paciente, Prescricao } from '@prisma/client'
 
 import CampoData from '../shared/CampoData'
 import CampoNome from '../shared/CampoNome'
@@ -8,11 +8,11 @@ import CampoPresc from '../shared/CampoPresc'
 
 import Image from 'next/image'
 import header from '../../img/header.png'
-import footer from '../../img/footer.png'
+import footer from '../../img/clean_footer.png'
 
 export interface GerarPrescricaoProps {
   paciente: Partial<Paciente>
-  receita: Partial<Receita>
+  prescricao: Partial<Prescricao>
   onChange: (paciente: Partial<Paciente>) => void
   salvarPaciente: () => void
   removerPaciente: () => void
@@ -76,7 +76,7 @@ export default function GerarPrescricao(props: GerarPrescricaoProps) {
           <CampoPresc
             label="Prescrição"
             className="rounded outline-none resize-none"
-            value={props.receita.receita || ''}
+            value={props.prescricao.prescricao || ''}
           />
         </div>
         <footer>

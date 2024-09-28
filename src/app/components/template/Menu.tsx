@@ -7,7 +7,7 @@ export default function Menu() {
       <nav className="flex flex-col gap-1 py-7">
         <MenuItem icone={IconHome} texto="Início" url="/" />
         <MenuItem icone={IconUser} texto="Pacientes" url="/pacientes" />
-        <MenuItem icone={IconFile} texto="Receitas" url="/receitas" />
+        <MenuItem icone={IconFile} texto="Prescrições" url="/prescricoes" />
         <MenuItem
           icone={IconPrinter}
           texto="Gerar Prescrição"

@@ -1,7 +1,7 @@
 'use client'
 import GerarPrescricao from '@/app/components/paciente/GerarPrescricao'
 import ListaPacientes from '@/app/components/paciente/ListaPacientes'
-import ListaReceitas from '@/app/components/receita/ListaReceitas'
+import ListaPrescricoes from '@/app/components/prescricao/ListaPrescricoes'
 import CampoNome from '@/app/components/shared/CampoNome'
 import Pagina from '@/app/components/template/Pagina'
 import Titulo from '@/app/components/template/Titulo'
@@ -15,9 +15,9 @@ export default function Page() {
     salvarPaciente,
     removerPaciente,
     verPaciente,
-    receitas,
-    receita,
-    verReceita,
+    prescricoes,
+    prescricao,
+    verPrescricao,
   } = useFuncoes()
 
   return (
@@ -25,10 +25,10 @@ export default function Page() {
       <Titulo icone={IconPrinter} texto="Gerar Prescrição" />
       {paciente ? (
         <>
-          {receita ? (
+          {prescricao ? (
             <GerarPrescricao
               paciente={paciente}
-              receita={receita}
+              prescricao={prescricao}
               onChange={verPaciente}
               salvarPaciente={salvarPaciente}
               removerPaciente={removerPaciente}
@@ -41,9 +41,9 @@ export default function Page() {
                 className="bg-zinc-300 p-2 outline-none"
                 value={paciente?.nome}
               />
-              <ListaReceitas
-                receitas={receitas}
-                onClick={verReceita}
+              <ListaPrescricoes
+                prescricoes={prescricoes}
+                onClick={verPrescricao}
                 pacienteId={paciente.id || ''}
               />
             </>

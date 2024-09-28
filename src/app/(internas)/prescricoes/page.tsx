@@ -1,7 +1,7 @@
 'use client'
-import ListaReceitas from '@/app/components/receita/ListaReceitas'
+import ListaPrescricoes from '@/app/components/prescricao/ListaPrescricoes'
 import ListaPacientes from '@/app/components/paciente/ListaPacientes'
-import FormularioReceita from '@/app/components/receita/FormularioReceita'
+import FormularioPrescricao from '@/app/components/prescricao/FormularioPrescricao'
 import Pagina from '@/app/components/template/Pagina'
 import Titulo from '@/app/components/template/Titulo'
 import useFuncoes from '@/app/data/hooks/useFuncoes'
@@ -13,28 +13,28 @@ export default function Page() {
     pacientes,
     paciente,
     verPaciente,
-    receitas,
-    receita,
-    salvarReceita,
-    removerReceita,
+    prescricoes,
+    prescricao,
+    salvarPrescricao,
+    removerPrescricao,
     retornarRec,
-    verReceita,
+    verPrescricao,
   } = useFuncoes()
 
   return (
     <Pagina className="flex flex-col gap-10">
-      <Titulo icone={IconUser} texto="Receitas" />
+      <Titulo icone={IconUser} texto="Prescrições" />
 
       {paciente ? (
         <>
-          {receita ? (
-            <FormularioReceita
+          {prescricao ? (
+            <FormularioPrescricao
               paciente={paciente}
-              receita={receita}
-              onChange={verReceita}
+              prescricao={prescricao}
+              onChange={verPrescricao}
               retornarRec={retornarRec}
-              salvarReceita={salvarReceita}
-              removerReceita={removerReceita}
+              salvarPrescricao={salvarPrescricao}
+              removerPrescricao={removerPrescricao}
             />
           ) : (
             <>
@@ -42,10 +42,10 @@ export default function Page() {
                 <button
                   type="button"
                   className="flex items-center gap-2 bg-purple-800 text-zinc-50 px-4 py-2 rounded-md"
-                  onClick={() => verReceita({})}
+                  onClick={() => verPrescricao({})}
                 >
                   <IconPlus />
-                  <span>Nova Receita</span>
+                  <span>Nova Prescrição</span>
                 </button>
               </div>
               <CampoNome
@@ -54,9 +54,9 @@ export default function Page() {
                 className="bg-zinc-300 p-2 outline-none"
                 value={paciente?.nome}
               />
-              <ListaReceitas
-                receitas={receitas}
-                onClick={verReceita}
+              <ListaPrescricoes
+                prescricoes={prescricoes}
+                onClick={verPrescricao}
                 pacienteId={paciente.id || ''}
               />
             </>

@@ -1,19 +1,19 @@
 import Backend from '@/backend'
-import type { Paciente, Receita } from '@prisma/client'
+import type { Paciente, Prescricao } from '@prisma/client'
 import { useEffect, useState } from 'react'
 
 export default function useFuncoes() {
   const [pacientes, setPacientes] = useState<Paciente[]>([])
   const [paciente, setPaciente] = useState<Partial<Paciente> | null>(null)
-  const [receitas, setReceitas] = useState<Receita[]>([])
-  const [receita, setReceita] = useState<Partial<Receita> | null>(null)
+  const [prescricoes, setPrescricoes] = useState<Prescricao[]>([])
+  const [prescricao, setPrescricao] = useState<Partial<Prescricao> | null>(null)
 
   useEffect(() => {
     Backend.pacientes.obterTodos().then(setPacientes)
   }, [])
 
   useEffect(() => {
-    Backend.receitas.obterTodas().then(setReceitas)
+    Backend.prescricoes.obterTodas().then(setPrescricoes)
   }, [])
 
   async function salvarPaciente() {
@@ -32,25 +32,27 @@ export default function useFuncoes() {
     setPaciente(null)
   }
 
-  async function salvarReceita(
-    receita: Receita | Partial<Receita>,
+  async function salvarPrescricao(
+    prescricao: Prescricao | Partial<Prescricao>,
     paciente: Paciente | Partial<Paciente>
   ) {
-    if (!receita) return
-    await Backend.receitas.salvarReceita(receita, paciente)
+    if (!prescricao) return
+    await Backend.prescricoes.salvarPrescricao(prescricao, paciente)
     if (paciente.id) {
-      const receitas = await Backend.receitas.obterPorPaciente(paciente.id)
-      setReceitas(receitas)
-      setReceita(null)
+      const prescricoes = await Backend.prescricoes.obterPorPaciente(
+        paciente.id
+      )
+      setPrescricoes(prescricoes)
+      setPrescricao(null)
     }
   }
 
-  async function removerReceita() {
-    if (!receita || !receita.id) return
-    await Backend.receitas.removerReceita(receita.id)
-    const receitas = await Backend.receitas.obterTodas()
-    setReceitas(receitas)
-    setReceita(null)
+  async function removerPrescricao() {
+    if (!prescricao || !prescricao.id) return
+    await Backend.prescricoes.removerPrescricao(prescricao.id)
+    const prescricoes = await Backend.prescricoes.obterTodas()
+    setPrescricoes(prescricoes)
+    setPrescricao(null)
   }
 
   return {
@@ -60,11 +62,12 @@ export default function useFuncoes() {
     removerPaciente,
     retornarPac: () => setPaciente(null),
     verPaciente: (paciente: Partial<Paciente> | null) => setPaciente(paciente),
-    receitas,
-    receita,
-    salvarReceita,
-    removerReceita,
-    retornarRec: () => setReceita(null),
-    verReceita: (receita: Partial<Receita> | null) => setReceita(receita),
+    prescricoes,
+    prescricao,
+    salvarPrescricao,
+    removerPrescricao,
+    retornarRec: () => setPrescricao(null),
+    verPrescricao: (prescricao: Partial<Prescricao> | null) =>
+      setPrescricao(prescricao),
   }
 }

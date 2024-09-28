@@ -23,7 +23,9 @@ export default function FormularioPaciente(props: FormularioPacienteProps) {
       alert('Paciente removido.')
     } catch (error) {
       console.error('Erro ao remover o paciente:', error)
-      alert('Este paciente tem receitas em seu nome e não pode ser removido.')
+      alert(
+        'Este paciente tem prescricoes em seu nome e não pode ser removido.'
+      )
     }
   }
 
