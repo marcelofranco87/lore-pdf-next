@@ -5,7 +5,7 @@ import FormularioPrescricao from '@/app/components/prescricao/FormularioPrescric
 import Pagina from '@/app/components/template/Pagina'
 import Titulo from '@/app/components/template/Titulo'
 import useFuncoes from '@/app/data/hooks/useFuncoes'
-import { IconPlus, IconUser } from '@tabler/icons-react'
+import { IconArrowLeft, IconPlus, IconUser } from '@tabler/icons-react'
 import CampoNome from '@/app/components/shared/CampoNome'
 
 export default function Page() {
@@ -13,6 +13,7 @@ export default function Page() {
     pacientes,
     paciente,
     verPaciente,
+    retornarPac,
     prescricoes,
     prescricao,
     salvarPrescricao,
@@ -41,6 +42,15 @@ export default function Page() {
               <div className="flex-justify-end">
                 <button
                   type="button"
+                  className="flex items-center gap-2 my-2 bg-purple-800 text-zinc-50 px-4 py-2 rounded-md"
+                  onClick={() => retornarPac()}
+                >
+                  <IconArrowLeft />
+                  <span>Voltar</span>
+                </button>
+
+                <button
+                  type="button"
                   className="flex items-center gap-2 bg-purple-800 text-zinc-50 px-4 py-2 rounded-md"
                   onClick={() => verPrescricao({})}
                 >
@@ -48,6 +58,7 @@ export default function Page() {
                   <span>Nova Prescrição</span>
                 </button>
               </div>
+
               <CampoNome
                 label="Nome do paciente"
                 type="text"

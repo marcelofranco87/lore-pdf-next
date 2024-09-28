@@ -1,4 +1,5 @@
 import type { Prescricao } from '@prisma/client'
+import { IconArrowLeft } from '@tabler/icons-react'
 import LinhaPrescricao from './LinhaPrescricao'
 
 export interface ListaPrescricoesProps {
