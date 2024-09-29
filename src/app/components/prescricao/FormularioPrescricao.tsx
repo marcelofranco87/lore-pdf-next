@@ -10,6 +10,10 @@ export interface FormularioPrescricaoProps {
     prescricao: Partial<Prescricao>,
     paciente: Partial<Paciente>
   ) => void
+  salvarComoNova: (
+    prescricao: Partial<Prescricao>,
+    paciente: Partial<Paciente>
+  ) => void
   retornarRec: () => void
   removerPrescricao: () => void
 }
@@ -54,6 +58,15 @@ export default function FormularioPrescricao(props: FormularioPrescricaoProps) {
             }
           >
             Salvar
+          </button>
+          <button
+            type="button"
+            className="bg-purple-800 text-zinc-50 px-4 py-2 rounded-md"
+            onClick={() =>
+              props.salvarComoNova(props.prescricao, props.paciente)
+            }
+          >
+            Salvar como nova
           </button>
           <button
             type="button"

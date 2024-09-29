@@ -6,6 +6,7 @@ import obterTodas from './prescricao/obterTodas'
 import obterPorPaciente from './prescricao/obterPorPaciente'
 import removerPrescricao from './prescricao/removerPrescricao'
 import salvarPrescricao from './prescricao/salvarPrescricao'
+import salvarComoNova from './prescricao/salvarComoNova'
 
 // biome-ignore lint/complexity/noStaticOnlyClass: <explanation>
 export default class Backend {
@@ -21,5 +22,6 @@ export default class Backend {
     obterTodas: obterTodas,
     obterPorPaciente: obterPorPaciente,
     removerPrescricao: removerPrescricao,
+    salvarComoNova: salvarComoNova,
   }
 }

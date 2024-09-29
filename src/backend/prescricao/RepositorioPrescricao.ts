@@ -17,6 +17,18 @@ export default class RepositorioPrescricao {
     })
   }
 
+  static async salvarComoNova(
+    prescricao: Prescricao,
+    paciente: Paciente
+  ): Promise<Prescricao> {
+    // biome-ignore lint/complexity/noThisInStatic: <explanation>
+    return await this.db.prescricao.upsert({
+      where: { id: prescricao.id },
+      update: prescricao,
+      create: { ...prescricao, pacienteId: paciente.id },
+    })
+  }
+
   static async obterTodas(): Promise<Prescricao[]> {
     // biome-ignore lint/complexity/noThisInStatic: <explanation>
     const prescricoes = await this.db.prescricao.findMany()

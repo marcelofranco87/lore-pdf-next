@@ -17,6 +17,7 @@ export default function Page() {
     prescricoes,
     prescricao,
     salvarPrescricao,
+    salvarComoNova,
     removerPrescricao,
     retornarRec,
     verPrescricao,
@@ -35,6 +36,7 @@ export default function Page() {
               onChange={verPrescricao}
               retornarRec={retornarRec}
               salvarPrescricao={salvarPrescricao}
+              salvarComoNova={salvarComoNova}
               removerPrescricao={removerPrescricao}
             />
           ) : (

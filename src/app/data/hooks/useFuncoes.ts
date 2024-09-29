@@ -47,6 +47,21 @@ export default function useFuncoes() {
     }
   }
 
+  async function salvarComoNova(
+    prescricao: Prescricao | Partial<Prescricao>,
+    paciente: Paciente | Partial<Paciente>
+  ) {
+    if (!prescricao) return
+    await Backend.prescricoes.salvarComoNova(prescricao, paciente)
+    if (paciente.id) {
+      const prescricoes = await Backend.prescricoes.obterPorPaciente(
+        paciente.id
+      )
+      setPrescricoes(prescricoes)
+      setPrescricao(null)
+    }
+  }
+
   async function removerPrescricao() {
     if (!prescricao || !prescricao.id) return
     await Backend.prescricoes.removerPrescricao(prescricao.id)
@@ -65,6 +80,7 @@ export default function useFuncoes() {
     prescricoes,
     prescricao,
     salvarPrescricao,
+    salvarComoNova,
     removerPrescricao,
     retornarRec: () => setPrescricao(null),
     verPrescricao: (prescricao: Partial<Prescricao> | null) =>
