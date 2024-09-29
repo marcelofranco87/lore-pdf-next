@@ -1,5 +1,4 @@
-# L.O.Re
-Layout-Oriented Reports
+![main_header](https://github.com/user-attachments/assets/b41fd079-53f5-4d5d-9c10-c893c2364ca6)
 
 # Índice
 
@@ -15,7 +14,7 @@ Layout-Oriented Reports
 
 
 # Sobre
-LORe é uma aplicação de página simples de produção de documentos médicos para impressão.
+L.O.Re (Layout-Oriented Reports) é uma aplicação de página simples de produção de documentos médicos para impressão.
 
 ## Funcionalidades
 O sistema permite o cadastramento de pacientes e a inclusão de relatórios e prescrições para cada paciente, bem como a impressão destes em layout apropriado, com cabeçalho, rodapé e campo para assinatura do profissional responsável.
@@ -56,7 +55,12 @@ npm run dev
 - Acesse http://localhost:3000 no navegador de sua preferência (Google Chrome, Microsoft Edge ou Mozilla Firefox recomendados).
 
 ## Layout da Aplicação
-Screenshots em breve.
+![home](https://github.com/user-attachments/assets/7bc79a4f-ee3e-4f54-ba1e-39099f2bcf7c)
+![pacientes](https://github.com/user-attachments/assets/5c99c4ef-5c7e-4770-b9da-207962aef430)
+![prescriptions](https://github.com/user-attachments/assets/da7741d2-d1ba-46f0-8fef-7a7c1e3b1337)
+![prescform](https://github.com/user-attachments/assets/93a6e8a7-3277-4673-9d71-0ae67853dca4)
+![preprint](https://github.com/user-attachments/assets/fa85850c-c48a-4489-afaa-d857306311e7)
+
 
 ## Deploy da Aplicação
 Aplicação executada apenas em ambiente local até o momento.
