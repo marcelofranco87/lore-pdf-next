@@ -14,7 +14,7 @@ const geistMono = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Lore Campagnaro Chaves - Gerador de Prescrições',
+  title: 'L.O.Re',
   description: 'Desenvolvido por Marcelo Franco',
 }
 
