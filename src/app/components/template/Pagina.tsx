@@ -1,18 +1,17 @@
-import Menu from "./Menu";
+import Menu from './Menu'
 
 export interface PaginaProps {
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	children: any;
-	className?: string;
+  children: React.ReactNode
+  className?: string
 }
 
 export default function Pagina(props: PaginaProps) {
-	return (
-		<div className="flex">
-			<Menu />
-			<main className={`flex-1 p-7 ${props.className ?? ""}`}>
-				{props.children}
-			</main>
-		</div>
-	);
+  return (
+    <div className="flex">
+      <Menu />
+      <main className={`flex-1 p-7 ${props.className ?? ''}`}>
+        {props.children}
+      </main>
+    </div>
+  )
 }
