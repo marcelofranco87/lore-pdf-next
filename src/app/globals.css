@@ -22,6 +22,27 @@
   .header, .footer {
     display: block;
   }
+  
+  /* Landscape A4 page with two A5 copies */
+  .landscape-page {
+    width: 297mm;
+    height: 210mm;
+    flex-direction: row;
+    page-break-after: always;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .a5-prescription {
+    width: 148.5mm;
+    height: 210mm;
+    position: relative;
+    overflow: hidden;
+    padding: 5mm;
+    box-sizing: border-box;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
 }
 
 body {

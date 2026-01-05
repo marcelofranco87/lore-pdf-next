@@ -48,49 +48,101 @@ export default function GerarPrescricao(props: GerarPrescricaoProps) {
           Incluir data
         </label>
       </div>
-      <div ref={componentRef} className="flex flex-col gap-5 text-zinc-900">
-        <div className="container-fluid header w-full">
-          <Image src={header} alt="Cabeçalho" />
-        </div>
-        <div className="grid grid-cols-6 gap-2">
-          <div className="col-span-5 p-2">
-            <CampoNome
-              label="Nome do paciente"
-              type="text"
-              className="rounded outline-none"
-              value={props.paciente.nome}
-            />
+      <div
+        ref={componentRef}
+        className="flex flex-row gap-5 text-zinc-900 landscape-page"
+      >
+        {/* First A5 Copy */}
+        <div className="a5-prescription">
+          <div className="container-fluid header w-full">
+            <Image src={header} alt="Cabeçalho" />
           </div>
-          {showDate && (
-            <div className="col-span-1 p-2">
-              <CampoData
-                label="Data"
+          <div className="grid grid-cols-6 gap-2">
+            <div className="col-span-5 p-2">
+              <CampoNome
+                label="Nome do paciente"
                 type="text"
-                className="rounded outline-none text-right mr-2"
-                value={hoje.toLocaleDateString()}
+                className="rounded outline-none"
+                value={props.paciente.nome}
               />
             </div>
-          )}
-        </div>
-        <div className="grid grid-cols-1 p-2">
-          <CampoPresc
-            label="Prescrição"
-            className="rounded outline-none resize-none"
-            value={props.prescricao.prescricao || ''}
-          />
-        </div>
-        <footer>
-          <div className="container-fluid footer w-full absolute bottom-0">
-            <div className="flex justify-center">
-              ______________________________________
-            </div>
-            <div className="flex justify-center">
-              Dra Lore Campagnaro Chaves
-            </div>
-            <div className="flex justify-center">CRM/MG: 57.833</div>
-            <Image src={footer} alt="Rodapé" />
+            {showDate && (
+              <div className="col-span-1 p-2">
+                <CampoData
+                  label="Data"
+                  type="text"
+                  className="rounded outline-none text-right mr-2"
+                  value={hoje.toLocaleDateString()}
+                />
+              </div>
+            )}
           </div>
-        </footer>
+          <div className="grid grid-cols-1 p-2">
+            <CampoPresc
+              label="Prescrição"
+              className="rounded outline-none resize-none"
+              value={props.prescricao.prescricao || ''}
+            />
+          </div>
+          <footer>
+            <div className="container-fluid footer w-full absolute bottom-0">
+              <div className="flex justify-center">
+                ______________________________________
+              </div>
+              <div className="flex justify-center">
+                Dra Lore Campagnaro Chaves
+              </div>
+              <div className="flex justify-center">CRM/MG: 57.833</div>
+              <Image src={footer} alt="Rodapé" />
+            </div>
+          </footer>
+        </div>
+
+        {/* Second A5 Copy */}
+        <div className="a5-prescription">
+          <div className="container-fluid header w-full">
+            <Image src={header} alt="Cabeçalho" />
+          </div>
+          <div className="grid grid-cols-6 gap-2">
+            <div className="col-span-5 p-2">
+              <CampoNome
+                label="Nome do paciente"
+                type="text"
+                className="rounded outline-none"
+                value={props.paciente.nome}
+              />
+            </div>
+            {showDate && (
+              <div className="col-span-1 p-2">
+                <CampoData
+                  label="Data"
+                  type="text"
+                  className="rounded outline-none text-right mr-2"
+                  value={hoje.toLocaleDateString()}
+                />
+              </div>
+            )}
+          </div>
+          <div className="grid grid-cols-1 p-2">
+            <CampoPresc
+              label="Prescrição"
+              className="rounded outline-none resize-none"
+              value={props.prescricao.prescricao || ''}
+            />
+          </div>
+          <footer>
+            <div className="container-fluid footer w-full absolute bottom-0">
+              <div className="flex justify-center">
+                ______________________________________
+              </div>
+              <div className="flex justify-center">
+                Dra Lore Campagnaro Chaves
+              </div>
+              <div className="flex justify-center">CRM/MG: 57.833</div>
+              <Image src={footer} alt="Rodapé" />
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
   )
