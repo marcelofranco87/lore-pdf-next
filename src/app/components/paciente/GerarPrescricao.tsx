@@ -57,8 +57,8 @@ export default function GerarPrescricao(props: GerarPrescricaoProps) {
           <div className="container-fluid header w-full">
             <Image src={header} alt="Cabeçalho" />
           </div>
-          <div className="grid grid-cols-6 gap-2">
-            <div className="col-span-5 p-2">
+          <div className="grid grid-cols-4 gap-2">
+            <div className={showDate ? 'col-span-3 p-2' : 'col-span-4 p-2'}>
               <CampoNome
                 label="Nome do paciente"
                 type="text"
@@ -71,7 +71,7 @@ export default function GerarPrescricao(props: GerarPrescricaoProps) {
                 <CampoData
                   label="Data"
                   type="text"
-                  className="rounded outline-none text-right mr-2"
+                  className="rounded outline-none text-right"
                   value={hoje.toLocaleDateString()}
                 />
               </div>
@@ -103,8 +103,8 @@ export default function GerarPrescricao(props: GerarPrescricaoProps) {
           <div className="container-fluid header w-full">
             <Image src={header} alt="Cabeçalho" />
           </div>
-          <div className="grid grid-cols-6 gap-2">
-            <div className="col-span-5 p-2">
+          <div className="grid grid-cols-4 gap-2">
+            <div className={showDate ? 'col-span-3 p-2' : 'col-span-4 p-2'}>
               <CampoNome
                 label="Nome do paciente"
                 type="text"
@@ -117,7 +117,7 @@ export default function GerarPrescricao(props: GerarPrescricaoProps) {
                 <CampoData
                   label="Data"
                   type="text"
-                  className="rounded outline-none text-right mr-2"
+                  className="rounded outline-none text-right"
                   value={hoje.toLocaleDateString()}
                 />
               </div>
