@@ -1,0 +1,5 @@
+- [x] Edit src/app/components/shared/InputTexto.tsx to destructure props
+- [x] Edit src/app/components/shared/CampoData.tsx to destructure props
+- [x] Edit src/app/components/shared/CampoNome.tsx to destructure props
+- [x] Edit src/app/components/shared/InputArea.tsx to destructure props
+- [ ] Edit src/app/components/shared/CampoPresc.tsx to destructure props
