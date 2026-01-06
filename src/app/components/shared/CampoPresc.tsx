@@ -27,7 +27,7 @@ export default function CampoPresc(props: CampoPrescProps) {
       <textarea
         {...props}
         readOnly
-        className={props.className}
+        className={`${props.className} !w-full`}
         ref={textareaRef}
       />
     </div>
