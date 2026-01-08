@@ -9,9 +9,6 @@ export default function Home() {
         <div className="container-fluid w-full">
           <Image src={header} alt="Cabeçalho" />
         </div>
-        <div className="flex flex-col text-purple-800 text-base text-center">
-          Gerador de prescrições para impressão
-        </div>
       </div>
     </Pagina>
   )
